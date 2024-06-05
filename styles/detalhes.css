@@ -1,0 +1,445 @@
+/* Estilo dos campos de formulário apenas para visualização */
+input[readonly], select[disabled], textarea[readonly] {
+    background-color: white; 
+    color: #EB9B00; /* Cor do texto */
+    cursor: not-allowed; /* Cursor de 'não permitido' */
+    border: 1px solid #EB9B00; /* Borda cinza */
+    padding: .375rem .75rem; /* Preenchimento padrão dos inputs */
+}
+
+
+main{
+    background-color: white;
+}
+section{
+    background-color: white;
+}
+aside{
+    background-color: white;
+}
+#container {
+    display: grid;
+    gap: 0px;
+    margin: 14px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 2fr 2fr 1fr;
+    grid-template-areas: 
+    "cadastro cadastro aside"
+    "cadastro cadastro aside"
+    "cadastro cadastro aside"
+    
+    
+    ;
+}
+
+input {
+    border-radius: 20px;
+     outline: #EB9B00;
+    border-color:#EB9B00; 
+    border:solid #EB9B00 ;
+}
+
+#nome-partida-user{
+    margin-left: 20px;
+    margin-top: 20px;
+    color: #EB9B00;
+
+}
+#nome-partida-user input{
+   width: 700px;
+   height: 50px;
+   padding: 10px;
+
+}
+
+
+
+#cadastro-partidas{
+    color: #EB9B00;
+    margin-left: 20px;
+    margin-top: 20px;
+    
+    
+}
+#cadastro-partidas textarea{
+    
+    width: 700px;
+    height: 100px;
+    border-radius: 20px;
+    border:solid  #EB9B00;
+    outline: #EB9B00;
+    padding: 10px;
+    resize: none;
+
+}
+#endereco{
+    color: #EB9B00;
+    padding-left: 20px;
+    margin-top: 60px;
+    
+    
+}
+#endereco input{
+    width:700px;
+}
+
+section h2{
+    color: #EB9B00;
+    font-weight: bold;
+    font-size: 4vh;
+    margin-top: 10px;
+    margin-left: 12px;
+}
+#part{
+    color: #EB9B00;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+#checklist{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+
+#checklist input{
+    display: none;
+
+}
+#checklist input + label:before{
+    content: '';
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    background-color: white;
+    border: 1px solid #EB9B00;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    margin-left: 10px;
+    
+}
+#checklist input:checked + label::before{
+    background-color: #EB9B00;
+    padding: 1px;
+    background-position: center;
+}
+#checklist input{
+    display: none;
+
+}
+#checklist input + label:before{
+    content: '';
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    background-color: white;
+    border: 1px solid #EB9B00;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    margin-left: 10px;
+    
+}
+#checklist input:checked + label::before{
+    background-color: #EB9B00;
+    padding: 1px;
+    background-position: center;
+}
+#checklist-2{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+
+#checklist-2 input{
+    display: none;
+
+}
+#checklist-2 input + label:before{
+    content: '';
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    background-color: white;
+    border: 1px solid #EB9B00;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    margin-left: 10px;
+    
+}
+#checklist-2 input:checked + label::before{
+    background-color: #EB9B00;
+    padding: 1px;
+    background-position: center;
+}
+#checklist-2 input{
+    display: none;
+
+}
+#checklist-2 input + label:before{
+    content: '';
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    background-color: white;
+    border: 1px solid #EB9B00;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    margin-left: 10px;
+    
+}
+#checklist-2 input:checked + label::before{
+    background-color: #EB9B00;
+    padding: 1px;
+    background-position: center;
+}
+#checklist-3 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+#checklist-3 input {
+    display: none;
+}
+
+#checklist-3 input + label:before {
+    content: '';
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    background-color: white;
+    border: 1px solid #EB9B00;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+#checklist-3 input:checked + label::before {
+    background-color: #EB9B00;
+    padding: 1px;
+    background-position: center;
+}
+
+#checklist-4 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+#checklist-4 input {
+    display: none;
+}
+
+#checklist-4 input + label:before {
+    content: '';
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    background-color: white;
+    border: 1px solid #EB9B00;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+#checklist-4 input:checked + label::before {
+    background-color: #EB9B00;
+    padding: 1px;
+    background-position: center;
+}
+
+#checklist-5 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+#checklist-5 input {
+    display: none;
+}
+
+#checklist-5 input + label:before {
+    content: '';
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    background-color: white;
+    border: 1px solid #EB9B00;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+#checklist-5 input:checked + label::before {
+    background-color: #EB9B00;
+    padding: 1px;
+    background-position: center;
+}
+
+#faixa-idade {
+    margin-top: 20px;
+    background-color:white; /* Cor de fundo do dropdown */
+    color: #EB9B00; /* Cor do texto */
+    padding: 10px; /* Espaçamento interno */
+    border: 1px solid #EB9B00; /* Borda do dropdown */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-family: Arial, sans-serif; /* Tipo de fonte */
+    font-size: 16px; /* Tamanho da fonte */
+
+}
+
+#faixa-idade:focus {
+    border-color: #EB9B00; /* Cor da borda ao focar (clicar) */
+}
+
+#faixa-idade:hover {
+    background-color: white; /* Cor de fundo ao passar o mouse */
+}
+
+#faixa-idade option {
+    padding: 5px; /* Espaçamento interno das opções */
+}
+
+h3{
+    color: #EB9B00;
+}
+#tit-escolha-esporte{
+    margin-top: 20px;
+}
+#escolha-esporte {
+    margin-top: 20px;
+    background-color:white; /* Cor de fundo do dropdown */
+    color: #EB9B00; /* Cor do texto */
+    padding: 10px; /* Espaçamento interno */
+    border: 1px solid #EB9B00; /* Borda do dropdown */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-family: Arial, sans-serif; /* Tipo de fonte */
+    font-size: 16px; /* Tamanho da fonte */
+
+}
+
+#escolha-esporte:focus {
+    border-color: #EB9B00; /* Cor da borda ao focar (clicar) */
+}
+
+#escolha-esporte:hover {
+    background-color: white; /* Cor de fundo ao passar o mouse */
+}
+
+#escolha-esporte option {
+    padding: 5px; /* Espaçamento interno das opções */
+    
+}
+#tit-opcao-pagamento{
+    margin-top: 20px;
+}
+#opcao-pagamento {
+    margin-top: 20px;
+    background-color:white; /* Cor de fundo do dropdown */
+    color: #EB9B00; /* Cor do texto */
+    padding: 10px; /* Espaçamento interno */
+    border: 1px solid #EB9B00; /* Borda do dropdown */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-family: Arial, sans-serif; /* Tipo de fonte */
+    font-size: 16px; /* Tamanho da fonte */
+
+}
+
+#opcao-pagamento:focus {
+    border-color: #EB9B00; /* Cor da borda ao focar (clicar) */
+}
+
+#opcao-pagamento:hover {
+    background-color: white; /* Cor de fundo ao passar o mouse */
+}
+
+#opcao-pagamento option {
+    padding: 5px; /* Espaçamento interno das opções */
+    
+}
+
+button{
+    margin-left: 30px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+ button{
+    background-color: #EB9B00;
+    color: white;
+    border: #EB9B00;
+    width: 200px;
+    height: 50px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+h3{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+select{
+    margin-left: 20px;
+}
+
+
+#endereco {
+    color: #EB9B00;
+    margin-top: 30px; /* Ajuste a margem superior conforme necessário */
+    padding-left: 20px;
+    padding-right: 10px;
+}
+
+#endereco input {
+    width: 700px;
+    height: 50px; /* Adicione altura para corresponder aos outros campos */
+    margin-bottom: 40px;
+    border-radius: 20px;
+    border: 1px solid #EB9B00;
+    outline: #EB9B00;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    #container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "cadastro"
+        "cadastro"
+        "aside"
+        "aside";
+    }
+    
+    #endereco {
+        padding-left: 0; /* Remova o padding esquerdo no layout responsivo */
+    }
+
+    #endereco input {
+        width: 100%; /* Faça o input ocupar a largura total no layout responsivo */
+    }
+
+    #cadastro-partidas textarea,
+    #nome-partida-user input,
+    #endereco input {
+        width: 100%;
+    }
+    
+    #botao-salvar button {
+        width: 100%;
+    }
+}
+
+#edit-button{
+    margin-right: 30px;
+}
+

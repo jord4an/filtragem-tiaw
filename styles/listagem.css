@@ -1,0 +1,58 @@
+/* Estilo do contêiner principal */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+/* Estilo geral do card */
+.card {
+    background-color: #ffffff; /* Cor de fundo do card */
+    border: 1px solid #dddddd; /* Borda do card */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    margin: 16px; /* Margem ao redor do card */
+    padding: 16px; /* Espaçamento interno */
+    width: calc(50% - 40px); /* Largura ajustada para dois cards por linha com espaçamento */
+    box-sizing: border-box; /* Garante que padding e border sejam incluídos na largura total */
+}
+
+/* Estilo do título do card */
+.card h2 {
+    color: #EB9B00;; /* Cor do texto do título */
+    font-size: 24px; /* Tamanho da fonte do título */
+    margin-bottom: 16px; /* Espaço abaixo do título */
+}
+
+/* Estilo dos parágrafos do card */
+.card p {
+    color: #666666; /* Cor do texto do parágrafo */
+    font-size: 16px; /* Tamanho da fonte do parágrafo */
+    line-height: 1.6; /* Altura da linha do texto */
+    margin-bottom: 16px; /* Espaço abaixo do parágrafo */
+}
+
+/* Estilo específico para o elemento 'Esporte' */
+.card p#escolha-esporte {
+    color: #007bff; /* Cor do texto do elemento Esporte em azul */
+    font-weight: bold; /* Texto em negrito */
+    margin-bottom: 24px; /* Espaço maior abaixo do elemento Esporte */
+}
+
+/* Estilo do botão no card */
+.card button {
+    background-color: #EB9B00; /* Cor de fundo do botão */
+    border: none; /* Sem borda */
+    border-radius: 4px; /* Bordas arredondadas do botão */
+    color: #ffffff; /* Cor do texto do botão */
+    padding: 8px 16px; /* Espaçamento interno do botão */
+    text-transform: uppercase; /* Texto em maiúsculas */
+    cursor: pointer; /* Cursor de mão quando passar o mouse */
+    margin-top: 16px; /* Espaço acima do botão */
+}
+
+/* Estilo do botão no card ao passar o mouse */
+.card button:hover {
+    background-color: #EB9B00; /* Cor de fundo do botão ao passar o mouse */
+}

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports</title>
+    
+    <link rel="stylesheet" href="reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="cadastro-part.css">
+    
+    
+</head>
+
+<body>
+    <header class="cabeçalho">
+        <div class="container">
+            <input type="checkbox" id="menu" class="container__botao">
+            <label for="menu" class="container__rotulo">
+                <span class="cabeçalho__menu-hamburguer container__imagem"></span>
+            </label>
+            <ul class="lista-menu">
+                <li class="lista-menu__titulo">Categorias</li>
+                <li class="lista-menu__item">
+                    <a href="#" class="lista-menu__link">Todos</a>
+                </li>
+                <li class="lista-menu__item">
+                    <a href="#" class="lista-menu__link">Basquete</a>
+                </li>
+                <li class="lista-menu__item">
+                    <a href="#" class="lista-menu__link">Futebol</a>
+                </li>
+                <li class="lista-menu__item">
+                    <a href="#" class="lista-menu__link">Vôlei</a>
+                </li>
+                <li class="lista-menu__item">
+                    <a href="#" class="lista-menu__link">Outros</a>
+                </li>
+            </ul>
+            <img src="img/Logo.svg" alt="Logo da Alurabooks" class="container__imagem">
+        </div>
+
+        <ul class="opções">
+            <li class="opções__item"><a href="#" class="opções__link">Home</a></li>
+            <input type="checkbox" id="opções-menu" class="opções__botão">
+            <label for="opções-menu" class="opções__rotulo">
+                <li class="opções__item">Categorias</li>
+            </label>
+
+            <ul class="lista-menu">
+                <li class="lista-menu__item">
+                    <a href="#" class="lista-menu__link">Todos</a>
+                </li>
+                <li class="lista-menu__item">
+                    <a href="#" class="lista-menu__link">Basquete</a>
+                </li>
+                <li class="lista-menu__item">
+                    <a href="#" class="lista-menu__link">Futebol</a>
+                </li>
+                <li class="lista-menu__item">
+                    <a href="#" class="lista-menu__link">Vôlei</a>
+                </li>
+                <li class="lista-menu__item">
+                    <a href="#" class="lista-menu__link">Outros</a>
+                </li>
+            </ul>
+
+            <li class="opções__item"><a href="#" class="opções__link">Favoritos</a></li>
+            <li class="opções__item"><a href="#" class="opções__link">Minhas Partidas</a></li>
+        </ul>
+
+        <div class="container">
+            <a href="#"><img src="img/Favoritos.svg" alt="Meus favoritos"
+                    class="container__imagem container__imagem-transparente"></a>
+            <a href="#" class="container__link">
+                <img src="img/adicionar.svg" alt="botão adicionar" class="container__imagem">
+                <p class="container__texto">Criar uma Partida</p>
+            </a>
+            <a href="#" class="container__link">
+                <img src="img/Usuario.svg" alt="Meu perfil" class="container__imagem">
+                <p class="container__texto">Meu perfil</p>
+            </a>
+        </div>
+    </header>
+
+    <main id="container">
+        <section class="cadastro">
+            <h2>CADASTRO DE PARTIDAS</h2>
+            
+               
+                
+                <form id="nome-partida-user">
+                    <label for="nome-partida-user">Nome:</label><br> <br>
+                    <input type="text" placeholder="Digite o nome da partida" required>
+                </form> 
+                    
+                <form id="cadastro-partidas">
+                    <label for="descricao"> Descrição:</label><br> <br>
+                    <textarea  rows="10" name="descricao" id="descricao" placeholder="Digite a descrição da partida" required></textarea>
+                </form>
+                <div id="checklist">
+                    <input type="checkbox" id="checkbox-1">
+                    <label for="checkbox-1">Bola</label>
+                    
+                       </div>
+                       <div id="checklist-2">
+                        <input type="checkbox" id="checkbox-2">
+                        <label for="checkbox-2">Rede</label>
+                        
+                           </div>
+                           <div id="checklist-3">
+                            <input type="checkbox" id="checkbox-3">
+                            <label for="checkbox-3">Chuteira</label>
+                            
+                               </div>
+                               <div id="checklist-4">
+                                <input type="checkbox" id="checkbox-4">
+                                <label for="checkbox-4">Quadra</label>
+                                
+                                   </div>
+                                   <div id="checklist-5">
+                                    <input type="checkbox" id="checkbox-5">
+                                    <label for="checkbox-5">Goleiro</label>
+                                    
+                                       </div>
+                                       
+                                        <h3>Faixa Etária:</h3> 
+                                        <select name="faixa-idade" id="faixa-idade" onchange="atualizarDados()">
+                                            <option value="0-11">0-11</option>
+                                            <option value="12-17">12-17</option>
+                                            <option value="18-25">18-25</option>
+                                            <option value="26+">26+</option>
+                                            <option value="Partida para todas as idades">Partida para todas as idades</option>
+                                        </select>
+                                        <h3>Escolha o Esporte</h3>
+                                        <select name="escolha-esporte" id="escolha-esporte" onchange="atualizarDados()">
+                                            <option value="Futebol">Futebol</option>
+                                            <option value="Vôlei">Vôlei</option>
+                                            <option value="Basquete">Basquete</option>
+                                            <option value="Outros Esportes">Outros Esportes</option>
+                                        </select>
+                                        <h3>Existe Opção de Pagamento ?</h3>
+                                        <select name="opcao-pagamento" id="opcao-pagamento" onchange="atualizarDados()">
+                                            <option value="Sim">Sim</option>
+                                            <option value="Nao">Não</option>
+                                        </select>
+                                        
+                                        
+ <!-- Tag br para pular as linhas entre o select e o botao */ -->  <br> <br> <br> <button id="botao-salvar">Salvar</button>
+                                        
+                                    
+            
+            <br><p id="part">Participantes : </p>
+        </section>
+        <aside>
+            <form  id="endereco">
+                <label for="endereco">  Endereço:</label><br> <br>
+                <input type="text" placeholder="Digite aqui o endereço da partida" required>
+                
+            </form>
+             
+        </aside>
+      
+    </main>
+    <hr />
+
+    <footer class="rodapé">
+        <h2 class="rodapé__titulo">Grupo Sports Matchs</h2>
+        <ul class="lista-rodapé">
+            <li class="lista-rodapé__titulo">Desenvolvedores</li>
+            <li class="lista-rodapé__item">
+                <img src="img/github.png" alt="Logo Github" width="35" height="35">
+                <a href="#" class="lista-rodapé__link">Cauê Afonso Moraes</a>
+            </li>
+            <li class="lista-rodapé__item">
+                <img src="img/github.png" alt="Logo Github" width="35" height="35">
+                <a href="#" class="lista-rodapé__link">Gabriel Peçanha Diniz</a>
+            </li>
+            <li class="lista-rodapé__item">
+                <img src="img/github.png" alt="Logo Github" width="35" height="35">
+                <a href="#" class="lista-rodapé__link">Jordan Oliveira</a>
+            </li>
+            <li class="lista-rodapé__item">
+                <img src="img/github.png" alt="Logo Github" width="35" height="35">
+                <a href="#" class="lista-rodapé__link">Lorena de Paula</a>
+            </li>
+            <li class="lista-rodapé__item">
+                <img src="img/github.png" alt="Logo Github" width="35" height="35">
+                <a href="#" class="lista-rodapé__link">Matheus Bianco Fox Drummond</a>
+            </li>
+            <li class="lista-rodapé__item">
+                <img src="img/github.png" alt="Logo Github" width="35" height="35">
+                <a href="#" class="lista-rodapé__link">Vitor Veiga Silva</a>
+        </ul>
+    </footer>
+
+
+
+    <script src="js/cadastro-partidas.js"></script>
+</body>
+
+</html>

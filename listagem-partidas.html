@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sports</title>
-    
+
     <link rel="stylesheet" href="reset.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="styles/listagem.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
 <body onload="atualizarListagem(), fetchData()">
@@ -86,71 +87,97 @@
             </a>
         </div>
     </header>
-    <section>
-        <div class="container mt-5">
-            <div class="row">
-                <div class="col-md-4">
-                    <!-- Filtro por faixa etária -->
-                    <div class="form-group">
-                        <label for="faixaEtaria">Faixa Etária:</label>
-                        <select class="form-control" id="faixaEtaria">
-                            <option value="">Selecione...</option>
-                            <option value="0-11">0-11</option>
-                            <option value="12-17">12-17</option>
-                            <option value="18-25">18-25</option>
-                            <option value="26+">26+</option>
-                        </select>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-2">
+                <div class="container">
+                    <div class="row">
+                        <div class="t1">
+                            <h1 class="tituloh1">Filtragem</h1>
+                        </div>
+                        <!-- Conteúdo dos checkboxes -->
+                        <div style="display: flex; align-items: center;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                                <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10"/>
+                                <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                            </svg>
+                            <h2 class="tituloh2" style="margin-left: 8px;">Localização</h2>
+                        </div>
+                        
+                        
+                        <div id="checklist">
+                            <input type="checkbox" id="checkbox-1" class="check1">
+                            <label for="checkbox-1">Coração Eucarístico</label>
+                        </div>
+                        <div id="checklist-2">
+                            <input type="checkbox" id="checkbox-2" class="check1">
+                            <label for="checkbox-2" >Padre Eustáquio</label>
+                        </div>
+                        <div id="checklist-3">
+                            <input type="checkbox" id="checkbox-3" class="check1">
+                            <label for="checkbox-3">Dom Cabral</label>
+                        </div>
+                        <div id="checklist-4">
+                            <input type="checkbox" id="checkbox-4" class="check1">
+                            <label for="checkbox-4">Outros</label>
+                        </div>
+                        <br>
+                        <!-- Segunda categoria de checkboxes -->
+                        <h2 class="tituloh2">Esportes</h2>
+                        <div id="checklist-5">
+                            <input type="checkbox" id="checkbox-5" class="check2">
+                            <label for="checkbox-5">Basquete</label>
+                        </div>
+                        <div id="checklist-6">
+                            <input type="checkbox" id="checkbox-6" class="check2">
+                            <label for="checkbox-6">Futebol</label>
+                        </div>
+                        <div id="checklist-7">
+                            <input type="checkbox" id="checkbox-7" class="check2">
+                            <label for="checkbox-7">Futsal</label>
+                        </div>
+                        <div id="checklist-8">
+                            <input type="checkbox" id="checkbox-8" class="check2">
+                            <label for="checkbox-8">Handball</label>
+                        </div>
+                        <div id="checklist-9">
+                            <input type="checkbox" id="checkbox-9" class="check2">
+                            <label for="checkbox-8">Vôlei</label>
+                        </div>
+                        <br>
+                        <!-- Terceira categoria de checkboxes -->
+                        <h2 class="tituloh2">Classificação Etária</h2>
+                        <div id="checklist-10">
+                            <input type="checkbox" id="checkbox-10" class="check3">
+                            <label for="checkbox-10">0-11</label>
+                        </div>
+                        <div id="checklist-11">
+                            <input type="checkbox" id="checkbox-11" class="check3">
+                            <label for="checkbox-11">12-17</label>
+                        </div>
+                        <div id="checklist-12">
+                            <input type="checkbox" id="checkbox-12" class="check3">
+                            <label for="checkbox-12">18-25</label>
+                        </div>
+                        <div id="checklist-13">
+                            <input type="checkbox" id="checkbox-13" class="check3">
+                            <label for="checkbox-13">26+</label>
+                        </div>
+                        <button class="btn btn-primary" id="applyFilter">Aplicar Filtro</button>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <!-- Filtro por esporte -->
-                    <div class="form-group">
-                        <label for="esporte">Esporte:</label>
-                        <select class="form-control" id="esporte">
-                            <option value="">Selecione...</option>
-                            <option value="Futebol">Futebol</option>
-                            <option value="Vôlei">Vôlei</option>
-                            <option value="Basquete">Basquete</option>
-                            <option value="Outros Esportes">Outros Esportes</option>
-                        </select>
-                    </div>
-                </div>
-                <div id="checklist">
-                    <input type="checkbox" id="checkbox-1">
-                    <label for="checkbox-1">Bola</label>
-                </div>
-                <div id="checklist-2">
-                    <input type="checkbox" id="checkbox-2">
-                    <label for="checkbox-2">Rede</label>
-                </div>
-                <div id="checklist-3">
-                    <input type="checkbox" id="checkbox-3">
-                    <label for="checkbox-3">Chuteira</label>
-                </div>
-                <div id="checklist-4">
-                    <input type="checkbox" id="checkbox-4">
-                    <label for="checkbox-4">Quadra</label>
-                </div>
-                <div id="checklist-5">
-                    <input type="checkbox" id="checkbox-5">
-                    <label for="checkbox-5">Goleiro</label>
                 </div>
             </div>
-            <div class="row">
-                <div class="col">
-                    <!-- Botão de filtro -->
-                    <button class="btn btn-primary" id="applyFilter">Aplicar Filtro</button>
-                    <button class="btn btn-primary" id="clearFilters">Limpar Filtro</button>
+            <div class="col-10">
+                <main>
+                <div class="container">
+                    <div class="row" id="cardsRow">
+                    </div>
                 </div>
+                </main>
             </div>
         </div>
-    </section>
-    
-    <main>
-        <div class="card">
+    </div>
 
-        </div>
-    </main>
     <hr />
     <footer class="rodapé">
         <h2 class="rodapé__titulo">Grupo Sports Matchs</h2>
@@ -182,4 +209,5 @@
         </ul>
     </footer>
     <script src="js/listagem-partidas.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>

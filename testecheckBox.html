@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist</title>
+</head>
+<body>
+    <div id="checklist">
+        <input type="checkbox" id="checkbox-1">
+        <label for="checkbox-1">Bola</label>
+    </div>
+    <div id="checklist-2">
+        <input type="checkbox" id="checkbox-2">
+        <label for="checkbox-2">Rede</label>
+    </div>
+    <div id="checklist-3">
+        <input type="checkbox" id="checkbox-3">
+        <label for="checkbox-3">Chuteira</label>
+    </div>
+    <div id="checklist-4">
+        <input type="checkbox" id="checkbox-4">
+        <label for="checkbox-4">Quadra</label>
+    </div>
+    <div id="checklist-5">
+        <input type="checkbox" id="checkbox-5">
+        <label for="checkbox-5">Goleiro</label>
+    </div>
+
+    <script>
+        // Função para salvar o estado dos checkboxes no armazenamento local
+        function saveCheckboxesState() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach((checkbox, index) => {
+                localStorage.setItem(`checkbox-${index + 1}`, checkbox.checked);
+            });
+        }
+
+        // Função para carregar o estado dos checkboxes do armazenamento local
+        function loadCheckboxesState() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach((checkbox, index) => {
+                const checked = localStorage.getItem(`checkbox-${index + 1}`);
+                if (checked === 'true') {
+                    checkbox.checked = true;
+                }
+            });
+        }
+
+        // Carregar o estado dos checkboxes ao carregar a página
+        window.onload = function() {
+            loadCheckboxesState();
+        };
+
+        // Salvar o estado dos checkboxes ao modificá-los
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', saveCheckboxesState);
+        });
+    </script>
+</body>
+</html>

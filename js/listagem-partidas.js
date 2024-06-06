@@ -69,41 +69,103 @@ checkboxes.forEach(checkbox => {
     checkbox.addEventListener('change', applyFilter);
 });
 
+
+
 // Função para aplicar o filtro
 function applyFilter() {
+    // Coletar os rótulos dos checkboxes verdadeiros do primeiro conjunto
+    const trueStates1 = [];
+    const checkboxes1 = document.querySelectorAll('input[type="checkbox"].check1');
+    checkboxes1.forEach((checkbox) => {
+        if (checkbox.checked) {
+            trueStates1.push(checkbox.nextElementSibling.textContent); // Adiciona o rótulo do checkbox aos trueStates1
+        }
+    });
+    console.log(trueStates1);
+
+    // Coletar os rótulos dos checkboxes verdadeiros do segundo conjunto
+    const trueStates2 = [];
+    const checkboxes2 = document.querySelectorAll('input[type="checkbox"].check2');
+    checkboxes2.forEach((checkbox) => {
+        if (checkbox.checked) {
+            trueStates2.push(checkbox.nextElementSibling.textContent); // Adiciona o rótulo do checkbox aos trueStates2
+        }
+    });
+    console.log(trueStates2);
+
+    // Coletar os rótulos dos checkboxes verdadeiros do terceiro conjunto
+    const trueStates3 = [];
+    const checkboxes3 = document.querySelectorAll('input[type="checkbox"].check3');
+    checkboxes3.forEach((checkbox) => {
+        if (checkbox.checked) {
+            trueStates3.push(checkbox.nextElementSibling.textContent); // Adiciona o rótulo do checkbox aos trueStates3
+        }
+    });
+    console.log(trueStates3);
+
     // Filtra os dados com base nos valores selecionados nos filtros
-    // Filtra os dados com base nos valores selecionados nos filtros
-    const filteredData = partidas.filter(jogador => {
-        // Verifica se a faixa etária selecionada corresponde à do jogador
-        if (faixaEtariaFilter.value && jogador.faixaIdade !== faixaEtariaFilter.value) {
-            return false; // Retorna false se não corresponder
+    const filteredData = partidas.filter(partida => {
+        // Se nenhum checkbox estiver selecionado em todos os conjuntos, retorna true para mostrar todos os cards
+        if (trueStates1.length === 0 && trueStates2.length === 0 && trueStates3.length === 0) {
+            return true;
         }
 
-        // Verifica se o esporte selecionado corresponde ao do jogador
-        if (esporteFilter.value && jogador.escolhaEsporte !== esporteFilter.value) {
-            return false; // Retorna false se não corresponder
+        // Verifica se pelo menos um rótulo dos checkboxes verdadeiros do primeiro conjunto está presente nas características da partida
+        if (trueStates1.length > 0) {
+            let matchFound1 = false;
+            trueStates1.forEach((state) => {
+                if (state.localeCompare(partida.endereco) === 0) {
+                    matchFound1 = true;
+                }
+            });
+
+            if (!matchFound1) {
+                return false; // Retorna false se não houver correspondência no primeiro conjunto
+            }
         }
 
-        // Verifica se todos os checkboxes marcados correspondem às características do jogador
-        for (const checkbox of checkboxes) {
-            if (checkbox.checked && !jogador.caracteristicas.includes(checkbox.getAttribute('value'))) {
-                return false; // Retorna false se uma característica não corresponder
+        // Verifica se pelo menos um rótulo dos checkboxes verdadeiros do segundo conjunto está presente nas características da partida
+        if (trueStates2.length > 0) {
+            let matchFound2 = false;
+            trueStates2.forEach((state) => {
+                if (state.localeCompare(partida.escolhaEsporte) === 0) {
+                    matchFound2 = true;
+                }
+            });
+
+            if (!matchFound2) {
+                return false; // Retorna false se não houver correspondência no segundo conjunto
+            }
+        }
+
+        // Verifica se pelo menos um rótulo dos checkboxes verdadeiros do terceiro conjunto está presente nas características da partida
+        if (trueStates3.length > 0) {
+            let matchFound3 = false;
+            trueStates3.forEach((state) => {
+                if (state.localeCompare(partida.faixaIdade) === 0) {
+                    matchFound3 = true;
+                }
+            });
+
+            if (!matchFound3) {
+                return false; // Retorna false se não houver correspondência no terceiro conjunto
             }
         }
 
         return true; // Retorna true se todas as condições forem atendidas
     });
 
-    console.log(filteredData );
-
-    // Mostra os pets filtrados
+    // Mostra as partidas filtradas no HTML
+    main.innerHTML = '';
 
     filteredData.forEach((partida, index) => {
         const cardPartida = criarCardPartida(partida, index);
-        main.innerHTML = '';
         main.appendChild(cardPartida);
     });
 }
+
+
+
 
 function clearFilters() {
     // Limpa o valor dos campos de filtro
